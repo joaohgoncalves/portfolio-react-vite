@@ -3,7 +3,42 @@ import { motion } from 'framer-motion';
 import { Reveal } from './Reveal';
 
 const STACK = [
-  "NEXT.JS", "REACT", "TYPESCRIPT", "C#", "PYTHON", "PHP", "NODE.JS", "SQL", "WEBGL", "FRAMER MOTION", "VERCEL", "SHOPIFY PLUS", "THREE.JS", "TAILWIND"
+  // Frontend / Web
+  "NEXT.JS",
+  "REACT",
+  "TYPESCRIPT",
+  "JAVASCRIPT",
+  "TAILWIND",
+
+  // Backend
+  "NODE.JS",
+  "PHP",
+  "PYTHON",
+  "JAVA",
+  "C#",
+
+  // Mobile
+  "REACT NATIVE",
+  "FLUTTER",
+
+  // Databases
+  "MYSQL",
+  "MONGODB",
+  "FIREBASE",
+
+  // CMS / E-commerce
+  "WORDPRESS",
+  "ELEMENTOR",
+  "SHOPIFY",
+
+  // Desktop / UI
+  "FLUTTER",
+  "TKINTER",
+  "FLET",
+
+  // DevOps / Cloud
+  "DOCKER",
+  "VERCEL",
 ];
 
 const Partnerships: React.FC = () => {

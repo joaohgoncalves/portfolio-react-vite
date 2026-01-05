@@ -3,59 +3,60 @@ import { Project, Experience, NavItem, SocialLink } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Projetos', href: '#work' },
   { label: 'Sobre', href: '#about' },
-  { label: 'Parceiros', href: '#partners' },
+  { label: 'Tecnologias', href: '#partners' },
   { label: 'Contato', href: '#contact' },
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Neon Velocity',
-    category: 'Interface Fintech',
-    description: 'Redesign de dashboard de alta frequência focado em visualização de dados e redução de carga cognitiva. Implementado com WebGL para gráficos em tempo real.',
-    year: '2024',
-    imageUrl: 'https://picsum.photos/seed/finance/1600/900',
-    tags: ['React', 'WebGL', 'D3.js']
+    title: 'Modelo-Vapor-Wordpress',
+    category: 'Interface E-commerce',
+    description:
+      'O site foi desenvolvido com foco em usabilidade e eficiência, priorizando uma navegação simples, objetiva e orientada à tarefa principal do usuário.',
+    year: '2025',
+    imageUrl:
+      'https://github.com/joaohgoncalves/Modelo-Vapor-Wordpress/blob/main/banner.png?raw=true',
+    tags: ['Wordpress', 'Elementor'],
+    caseUrl: 'https://github.com/joaohgoncalves/Modelo-Vapor-Wordpress'
   },
   {
     id: '2',
-    title: 'Aero Brand',
-    category: 'Experiência E-commerce',
-    description: 'Transformação digital completa para uma marca de luxo aeroespacial. Venda narrativa orientada por scroll com uso intenso de texturas de vídeo.',
-    year: '2023',
-    imageUrl: 'https://picsum.photos/seed/aero/1600/900',
-    tags: ['Next.js', 'Framer Motion', 'Shopify']
+    title: 'Website-Juridico',
+    category: 'Template Jurídico',
+    description:
+      'Transformação digital completa para uma marca jurídica de alto padrão, com foco em experiência do usuário, credibilidade institucional e navegação intuitiva, alinhando sofisticação visual à eficiência funcional.',
+    year: '2025',
+    imageUrl: 'https://github.com/joaohgoncalves/Website-Juridico-Template-WordPress-com-Elementor/blob/main/banner.png?raw=true',
+    tags: ['Wordpress', 'Elementor'],
+    caseUrl: 'https://exemplo.com/aero-brand'
   },
   {
     id: '3',
-    title: 'Mono Architecture',
+    title: 'Landing page',
     category: 'Sistema de Portfólio',
-    description: 'Um portfólio minimalista e brutalista para um escritório de arquitetura premiado. Foco em imagens grandes e hierarquia tipográfica.',
-    year: '2023',
-    imageUrl: 'https://picsum.photos/seed/arch/1600/900',
-    tags: ['TypeScript', 'Tailwind', 'CMS']
+    description:
+      'Um portfólio minimalista e brutalista para um programador.',
+    year: '2026',
+    imageUrl: 'https://github.com/joaohgoncalves/portfolio-react-vite/blob/main/banner.png?raw=true',
+    tags: ['TypeScript', 'JavaScript', 'React', 'Vite'],
+    caseUrl: 'https://github.com/joaohgoncalves/portfolio-react-vite'
   }
 ];
+
 
 export const EXPERIENCE: Experience[] = [
   {
     id: 'e1',
-    role: 'Engenheiro Frontend Sênior',
-    company: 'TechFlow Solutions',
-    period: '2022 — Atual',
-    description: 'Liderando a equipe de design system e implementando arquitetura de micro-frontends para aplicações corporativas escaláveis.'
-  },
-  {
-    id: 'e2',
-    role: 'Desenvolvedor Criativo',
-    company: 'Studio Kinetic',
-    period: '2019 — 2022',
-    description: 'Unindo design e engenharia para criar experiências web interativas e premiadas para marcas globais.'
+    role: 'Estagio',
+    company: 'TRP Imports',
+    period: '2025 — Atual',
+    description: 'Atuo também no suporte e evolução de sistemas ERP e e-commerces, auxiliando na integração, manutenção e otimização de fluxos operacionais e interfaces. Possuo experiência no desenvolvimento e customização de temas para a Nuvemshop, com foco em performance, usabilidade, SEO e conversão.'
   }
+  
 ];
 
 export const SOCIALS: SocialLink[] = [
-  { platform: 'LinkedIn', url: '#', label: 'linkedin.com/in/joao-henrique' },
-  { platform: 'GitHub', url: '#', label: 'github.com/joao-henrique' },
-  { platform: 'Twitter', url: '#', label: '@joao_dev' },
+  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/jo%C3%A3o-gon%C3%A7alves-27a5ba347/', label: 'linkedin.com/in/joao-henrique' },
+  { platform: 'GitHub', url: 'https://github.com/joaohgoncalves', label: 'github.com/joao-henrique' },
 ];

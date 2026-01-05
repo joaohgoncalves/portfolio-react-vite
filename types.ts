@@ -6,6 +6,7 @@ export interface Project {
   year: string;
   imageUrl: string;
   tags: string[];
+  caseUrl?: string;
 }
 
 export interface Experience {

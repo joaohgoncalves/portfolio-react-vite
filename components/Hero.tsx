@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
   const scrollButtonOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scrollButtonY = useTransform(scrollY, [0, 300], [0, 50]);
 
-  const words = "Criando experiências digitais onde movimento encontra arquitetura. Design de impacto, engenharia de performance.".split(" ");
+  const words = "Design de impacto e engenharia de performance: criando experiências digitais onde movimento, tecnologia e usabilidade se encontram.".split(" ");
 
   const handleScrollClick = () => {
     const element = document.getElementById('work');
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-brand-accent font-mono text-xs md:text-sm mb-4 tracking-widest uppercase"
         >
-          Engenheiro Frontend & Desenvolvedor Criativo
+          Frontend Developer & Designer
         </motion.p>
         
         {/* Responsive Typography: 5xl on mobile -> 9xl on desktop */}

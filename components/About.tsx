@@ -25,7 +25,7 @@ const About: React.FC = () => {
             </Reveal>
             <Reveal delay={0.3}>
                 <p className="text-white/60 text-sm md:text-base leading-relaxed">
-                    Baseado no Brasil, atuando globalmente. Com mais de 5 anos de experiência entregando código em produção para startups e clientes corporativos. Especialista no ecossistema React, mas minha verdadeira ferramenta é a resolução visual de problemas.
+                    Baseado no Brasil,Trabalho onde engenharia encontra movimento, combinando precisão técnica com motion design para criar experiências que parecem vivas, não artificiais. Especialista no ecossistema React, mas minha verdadeira ferramenta é a resolução visual de problemas.
                 </p>
             </Reveal>
           </div>

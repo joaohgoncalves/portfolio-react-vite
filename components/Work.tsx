@@ -114,10 +114,22 @@ const Work: React.FC = () => {
                           {project.description}
                       </p>
                       
-                      <a href="#" className="inline-flex items-center gap-2 text-white hover:text-brand-accent transition-colors group/link">
-                          <span className="uppercase tracking-widest text-xs md:text-sm font-medium border-b border-transparent group-hover/link:border-brand-accent pb-0.5">Ver Estudo de Caso</span>
-                          <ArrowUpRight size={16} className="transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+                      {project.caseUrl && (
+                      <a
+                        href={project.caseUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-white hover:text-brand-accent transition-colors group/link"
+                      >
+                        <span className="uppercase tracking-widest text-xs md:text-sm font-medium border-b border-transparent group-hover/link:border-brand-accent pb-0.5">
+                          Ver Estudo de Caso
+                        </span>
+                        <ArrowUpRight
+                          size={16}
+                          className="transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"
+                        />
                       </a>
+                    )}
                   </div>
                </div>
             ))}
