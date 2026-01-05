@@ -3,7 +3,7 @@
 [![Status](https://img.shields.io/badge/status-finalizado-brightgreen)](#)
 [![Deploy](https://img.shields.io/badge/deploy-online-success)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub last commit](https://img.shields.io/github/last-commit/joaohgoncalves/portfolio)](#)
+[![GitHub last commit](https://img.shields.io/github/last-commit/joaohgoncalves/portfolio-react-vite)](#)
 
 Este projeto consiste em um **portfólio profissional finalizado**, desenvolvido para apresentar projetos, experiências e competências técnicas, com foco em **UX, performance, arquitetura moderna e entrega em produção**.
 
