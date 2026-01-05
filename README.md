@@ -43,10 +43,10 @@ Este projeto consiste em um **portfólio profissional finalizado**, desenvolvido
 
 A aplicação está disponível em produção:
 
-🔗 **URL:** _adicione aqui o link do deploy_
+🔗 **URL:**https://joaogoncalvesdev.vercel.app/
 
 Plataforma de deploy utilizada:
-- Vercel / Netlify / Cloudflare Pages
+- Vercel
 
 ---
 
