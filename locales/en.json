@@ -41,5 +41,11 @@
     "talkToMe": "Talk to Me",
     "location": "São Paulo — Since 2019",
     "business": "Business Enquiries"
+  },
+  "experience": {
+    "role": "Internship",
+    "company": "TRP Imports",
+    "period": "2025 — Present",
+    "description": "I also work in the support and evolution of ERP systems and e-commerces, assisting in the integration, maintenance and optimization of operational flows and interfaces. I have experience in developing and customizing themes for Nuvemshop, with a focus on performance, usability, SEO and conversion."
   }
 }

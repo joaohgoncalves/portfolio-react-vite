@@ -50,10 +50,10 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCE: Experience[] = [
   {
     id: 'e1',
-    role: 'Estagio',
-    company: 'TRP Imports',
-    period: '2025 — Atual',
-    description: 'Atuo também no suporte e evolução de sistemas ERP e e-commerces, auxiliando na integração, manutenção e otimização de fluxos operacionais e interfaces. Possuo experiência no desenvolvimento e customização de temas para a Nuvemshop, com foco em performance, usabilidade, SEO e conversão.'
+    role: 'experience.role',
+    company: 'experience.company',
+    period: 'experience.period',
+    description: 'experience.description'
   }
   
 ];

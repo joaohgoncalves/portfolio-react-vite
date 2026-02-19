@@ -42,14 +42,14 @@ const About: React.FC = () => {
                     <div key={exp.id} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-12">
                         <div className="md:col-span-1">
                             <Reveal>
-                                <span className="text-white/40 font-mono text-xs md:text-sm inline-block border border-white/10 px-2 py-1 rounded md:border-none md:p-0">{exp.period}</span>
+                                <span className="text-white/40 font-mono text-xs md:text-sm inline-block border border-white/10 px-2 py-1 rounded md:border-none md:p-0">{t(exp.period)}</span>
                             </Reveal>
                         </div>
                         <div className="md:col-span-3">
                             <Reveal delay={0.2}>
-                                <h4 className="text-xl md:text-2xl text-white font-display font-bold mb-1 md:mb-2">{exp.role}</h4>
-                                <p className="text-brand-accent mb-4 text-sm md:text-base">{exp.company}</p>
-                                <p className="text-white/60 font-light text-sm md:text-base">{exp.description}</p>
+                                <h4 className="text-xl md:text-2xl text-white font-display font-bold mb-1 md:mb-2">{t(exp.role)}</h4>
+                                <p className="text-brand-accent mb-4 text-sm md:text-base">{t(exp.company)}</p>
+                                <p className="text-white/60 font-light text-sm md:text-base">{t(exp.description)}</p>
                             </Reveal>
                         </div>
                     </div>
