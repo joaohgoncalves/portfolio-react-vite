@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
@@ -7,6 +7,7 @@ import About from './components/About';
 import Partnerships from './components/Partnerships';
 import Contact from './components/Contact';
 import BackgroundReveal from './components/BackgroundReveal';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const AppContent: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -27,7 +28,7 @@ const AppContent: React.FC = () => {
         style={{ scaleX }}
       />
 
-      {/* <LanguageSwitcher /> */}
+      <LanguageSwitcher />
 
       <Navigation />
 
@@ -44,7 +45,13 @@ const AppContent: React.FC = () => {
 
 const App: React.FC = () => {
   return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-brand-dark flex items-center justify-center">
+        <div className="text-white text-xl">Carregando...</div>
+      </div>
+    }>
       <AppContent />
+    </Suspense>
   );
 };
 
