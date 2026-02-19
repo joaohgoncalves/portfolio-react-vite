@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Work from './components/Work';
@@ -47,6 +48,7 @@ const App: React.FC = () => {
   return (
     <>
       <Analytics />
+      <SpeedInsights />
       <Suspense fallback={
         <div className="min-h-screen bg-brand-dark flex items-center justify-center">
           <div className="text-white text-xl">Carregando...</div>
