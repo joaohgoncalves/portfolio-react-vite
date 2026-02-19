@@ -7,7 +7,6 @@ import About from './components/About';
 import Partnerships from './components/Partnerships';
 import Contact from './components/Contact';
 import BackgroundReveal from './components/BackgroundReveal';
-import LanguageSwitcher from './components/LanguageSwitcher';
 
 const AppContent: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -28,7 +27,7 @@ const AppContent: React.FC = () => {
         style={{ scaleX }}
       />
 
-      <LanguageSwitcher />
+      {/* <LanguageSwitcher /> */}
 
       <Navigation />
 

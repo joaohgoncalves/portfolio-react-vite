@@ -6,20 +6,16 @@ import en from './locales/en.json';
 // Função para detectar idioma baseado no IP (será chamada depois da inicialização)
 const detectLanguageFromIP = async (): Promise<string> => {
   try {
-    console.log('🔍 Detectando idioma por IP...');
-
     // Para desenvolvimento local, vamos simular baseado na URL ou usar uma lógica simples
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       // Simulação: se a URL contiver ?lang=en, força inglês
       const urlParams = new URLSearchParams(window.location.search);
       const forcedLang = urlParams.get('lang');
       if (forcedLang) {
-        console.log('🎯 Idioma forçado pela URL:', forcedLang);
         return forcedLang;
       }
 
       // Para simular usuário dos EUA no desenvolvimento
-      console.log('🏠 Desenvolvimento local - simulando EUA (EN)');
       return 'en';
     }
 
@@ -35,10 +31,7 @@ const detectLanguageFromIP = async (): Promise<string> => {
     }
 
     const data = await response.json();
-    console.log('📍 Dados do IP:', data);
-
     const country = data.country_code;
-    console.log('🌍 País detectado:', country);
 
     // Mapeamento de países para idiomas
     const countryToLanguage: { [key: string]: string } = {
@@ -52,13 +45,9 @@ const detectLanguageFromIP = async (): Promise<string> => {
       'NZ': 'en',
     };
 
-    const detectedLang = countryToLanguage[country] || 'en';
-    console.log('🎯 Idioma detectado:', detectedLang);
-
-    return detectedLang;
+    return countryToLanguage[country] || 'en';
   } catch (error) {
-    console.warn('❌ Erro ao detectar idioma por IP:', error);
-    // Fallback para português no desenvolvimento local
+    // Fallback para português
     return 'pt';
   }
 };
@@ -73,7 +62,7 @@ i18n
     },
     lng: 'en', // Começar com inglês (simulando EUA)
     fallbackLng: 'en',
-    debug: true,
+    debug: false, // Desabilitar debug em produção
 
     interpolation: {
       escapeValue: false,
@@ -82,15 +71,11 @@ i18n
 
 // Detectar idioma por IP e mudar se necessário
 detectLanguageFromIP().then((detectedLang) => {
-  console.log('🎯 Idioma detectado:', detectedLang);
-  console.log('🚀 Idioma atual:', i18n.language);
-
   if (detectedLang !== i18n.language) {
-    console.log('🔄 Mudando idioma para:', detectedLang);
     i18n.changeLanguage(detectedLang);
   }
 }).catch((error) => {
-  console.error('💥 Erro:', error);
+  console.error('Erro na detecção de idioma:', error);
 });
 
 export default i18n;
