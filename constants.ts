@@ -12,10 +12,9 @@ export const NAV_ITEMS: NavItem[] = [
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Modelo-Vapor-Wordpress',
-    category: 'Interface E-commerce',
-    description:
-      'O site foi desenvolvido com foco em usabilidade e eficiência, priorizando uma navegação simples, objetiva e orientada à tarefa principal do usuário.',
+    title: 'work.projects.modeloVapor.title',
+    category: 'work.projects.modeloVapor.category',
+    description: 'work.projects.modeloVapor.description',
     year: '2025',
     imageUrl:
       'https://github.com/joaohgoncalves/Modelo-Vapor-Wordpress/blob/main/banner.png?raw=true',
@@ -24,10 +23,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '2',
-    title: 'Website-Juridico',
-    category: 'Template Jurídico',
-    description:
-      'Transformação digital completa para uma marca jurídica de alto padrão, com foco em experiência do usuário, credibilidade institucional e navegação intuitiva, alinhando sofisticação visual à eficiência funcional.',
+    title: 'work.projects.websiteJuridico.title',
+    category: 'work.projects.websiteJuridico.category',
+    description: 'work.projects.websiteJuridico.description',
     year: '2025',
     imageUrl: 'https://github.com/joaohgoncalves/Website-Juridico-Template-WordPress-com-Elementor/blob/main/banner.png?raw=true',
     tags: ['Wordpress', 'Elementor'],
@@ -35,10 +33,9 @@ export const PROJECTS: Project[] = [
   },
   {
     id: '3',
-    title: 'Landing page',
-    category: 'Sistema de Portfólio',
-    description:
-      'Um portfólio minimalista e brutalista para um programador.',
+    title: 'work.projects.portfolio.title',
+    category: 'work.projects.portfolio.category',
+    description: 'work.projects.portfolio.description',
     year: '2026',
     imageUrl: 'https://github.com/joaohgoncalves/portfolio-react-vite/blob/main/banner.png?raw=true',
     tags: ['TypeScript', 'JavaScript', 'React', 'Vite'],

@@ -11,7 +11,24 @@
     "number": "01",
     "description": "Selected works focused on high-performance interfaces and brand storytelling.",
     "explore": "Scroll to explore →",
-    "caseStudy": "View Case Study"
+    "caseStudy": "View Case Study",
+    "projects": {
+      "modeloVapor": {
+        "title": "Modelo-Vapor-Wordpress",
+        "category": "E-commerce Interface",
+        "description": "The website was developed with a focus on usability and efficiency, prioritizing simple, objective navigation oriented to the user's main task."
+      },
+      "websiteJuridico": {
+        "title": "Website-Juridico",
+        "category": "Legal Template",
+        "description": "Complete digital transformation for a high-end legal brand, focusing on user experience, institutional credibility and intuitive navigation, aligning visual sophistication with functional efficiency."
+      },
+      "portfolio": {
+        "title": "Landing page",
+        "category": "Portfolio System",
+        "description": "A minimalist and brutalist portfolio for a programmer."
+      }
+    }
   },
   "about": {
     "title": "OFF THE ROAD",

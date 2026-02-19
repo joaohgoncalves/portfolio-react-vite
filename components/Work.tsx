@@ -100,7 +100,7 @@ const Work: React.FC = () => {
                   {/* Text Content */}
                   <div className="md:pr-8">
                       <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
-                        <span className="text-brand-accent font-mono text-[10px] md:text-xs uppercase tracking-wider">{project.year} — {project.category}</span>
+                        <span className="text-brand-accent font-mono text-[10px] md:text-xs uppercase tracking-wider">{project.year} — {t(project.category)}</span>
                         <div className="flex gap-2">
                              {project.tags.slice(0, 2).map(tag => (
                                 <span key={tag} className="text-[10px] uppercase border border-white/10 px-2 py-0.5 rounded-full text-white/40">{tag}</span>
@@ -109,11 +109,11 @@ const Work: React.FC = () => {
                       </div>
                       
                       <h3 className="text-2xl md:text-4xl font-display font-bold text-white mb-3 md:mb-4 group-hover:text-brand-accent transition-colors">
-                          {project.title}
+                          {t(project.title)}
                       </h3>
                       
                       <p className="text-white/60 mb-6 md:mb-8 font-light text-sm md:text-base leading-relaxed">
-                          {project.description}
+                          {t(project.description)}
                       </p>
                       
                       {project.caseUrl && (

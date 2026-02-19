@@ -11,7 +11,24 @@
     "number": "01",
     "description": "Trabalhos selecionados com foco em interfaces de alta performance e storytelling de marca.",
     "explore": "Role para explorar →",
-    "caseStudy": "Ver Estudo de Caso"
+    "caseStudy": "Ver Estudo de Caso",
+    "projects": {
+      "modeloVapor": {
+        "title": "Modelo-Vapor-Wordpress",
+        "category": "Interface E-commerce",
+        "description": "O site foi desenvolvido com foco em usabilidade e eficiência, priorizando uma navegação simples, objetiva e orientada à tarefa principal do usuário."
+      },
+      "websiteJuridico": {
+        "title": "Website-Juridico",
+        "category": "Template Jurídico",
+        "description": "Transformação digital completa para uma marca jurídica de alto padrão, com foco em experiência do usuário, credibilidade institucional e navegação intuitiva, alinhando sofisticação visual à eficiência funcional."
+      },
+      "portfolio": {
+        "title": "Landing page",
+        "category": "Sistema de Portfólio",
+        "description": "Um portfólio minimalista e brutalista para um programador."
+      }
+    }
   },
   "about": {
     "title": "FORA DA ROTA",
