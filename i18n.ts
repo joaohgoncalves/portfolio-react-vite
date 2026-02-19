@@ -35,20 +35,73 @@ const detectLanguageFromIP = async (): Promise<string> => {
 
     // Mapeamento de países para idiomas
     const countryToLanguage: { [key: string]: string } = {
-      'BR': 'pt',
-      'PT': 'pt',
-      'US': 'en',
-      'GB': 'en',
-      'CA': 'en',
-      'AU': 'en',
-      'IE': 'en',
-      'NZ': 'en',
+      // Países de língua portuguesa
+      'BR': 'pt', // Brasil
+      'PT': 'pt', // Portugal
+      'AO': 'pt', // Angola
+      'MZ': 'pt', // Moçambique
+      'CV': 'pt', // Cabo Verde
+      'GW': 'pt', // Guiné-Bissau
+      'ST': 'pt', // São Tomé e Príncipe
+      'TL': 'pt', // Timor-Leste
+
+      // Países de língua inglesa
+      'US': 'en', // Estados Unidos
+      'GB': 'en', // Reino Unido
+      'CA': 'en', // Canadá
+      'AU': 'en', // Austrália
+      'IE': 'en', // Irlanda
+      'NZ': 'en', // Nova Zelândia
+      'ZA': 'en', // África do Sul
+      'IN': 'en', // Índia
+      'SG': 'en', // Singapura
+      'MY': 'en', // Malásia
+      'PH': 'en', // Filipinas
+      'HK': 'en', // Hong Kong
+      'RU': 'en', // Rússia (inglês como fallback)
+      'DE': 'en', // Alemanha
+      'FR': 'en', // França
+      'ES': 'en', // Espanha
+      'IT': 'en', // Itália
+      'NL': 'en', // Holanda
+      'BE': 'en', // Bélgica
+      'CH': 'en', // Suíça
+      'AT': 'en', // Áustria
+      'SE': 'en', // Suécia
+      'NO': 'en', // Noruega
+      'DK': 'en', // Dinamarca
+      'FI': 'en', // Finlândia
+      'PL': 'en', // Polônia
+      'CZ': 'en', // República Tcheca
+      'HU': 'en', // Hungria
+      'RO': 'en', // Romênia
+      'BG': 'en', // Bulgária
+      'GR': 'en', // Grécia
+      'TR': 'en', // Turquia
+      'JP': 'en', // Japão
+      'KR': 'en', // Coreia do Sul
+      'CN': 'en', // China
+      'TW': 'en', // Taiwan
+      'TH': 'en', // Tailândia
+      'VN': 'en', // Vietnã
+      'ID': 'en', // Indonésia
+      'MX': 'en', // México
+      'AR': 'en', // Argentina
+      'CL': 'en', // Chile
+      'CO': 'en', // Colômbia
+      'PE': 'en', // Peru
+      'VE': 'en', // Venezuela
+      'UY': 'en', // Uruguai
+      'PY': 'en', // Paraguai
+      'BO': 'en', // Bolívia
+      'EC': 'en', // Equador
     };
 
     return countryToLanguage[country] || 'en';
   } catch (error) {
-    // Fallback para português
-    return 'pt';
+    // Fallback para inglês em caso de erro
+    console.warn('Erro na detecção de idioma por IP, usando fallback para inglês:', error);
+    return 'en';
   }
 };
 
