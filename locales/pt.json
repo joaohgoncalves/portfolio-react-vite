@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "subtitle": "Frontend Developer & Designer",
+    "title": "JOÃO HENRIQUE GONÇALVES",
+    "description": "Design de impacto e engenharia de performance: criando experiências digitais onde movimento, tecnologia e usabilidade se encontram.",
+    "scroll": "Role para experienciar",
+    "scrollMobile": "Scroll"
+  },
+  "work": {
+    "title": "EM ROTA",
+    "number": "01",
+    "description": "Trabalhos selecionados com foco em interfaces de alta performance e storytelling de marca.",
+    "explore": "Role para explorar →",
+    "caseStudy": "Ver Estudo de Caso"
+  },
+  "about": {
+    "title": "FORA DA ROTA",
+    "number": "02",
+    "philosophy": "Minha filosofia é simples: <strong>Frontend é a primeira impressão.</strong> Não deve apenas funcionar; deve parecer vivo. Combino precisão de engenharia com um amor caótico por motion design.",
+    "description": "Baseado no Brasil,Trabalho onde engenharia encontra movimento, combinando precisão técnica com motion design para criar experiências que parecem vivas, não artificiais. Especialista no ecossistema React, mas minha verdadeira ferramenta é a resolução visual de problemas.",
+    "experience": "Experiência"
+  },
+  "partnerships": {
+    "title": "Ecossistema & Arquitetura",
+    "subtitle": "Performance perceptiva. <span>Código orientado à intenção.</span>",
+    "description": "Não utilizo ferramentas apenas por conveniência. Seleciono tecnologias que permitem transformar identidade em experiência digital. Uma stack desenhada para fluidez, onde o <strong>motion design</strong> faz parte da engenharia, não apenas da decoração.",
+    "pause": "Clique para pausar",
+    "play": "Clique para continuar"
+  },
+  "contact": {
+    "title": "VAMOS CONVERSAR",
+    "email": "joaohenriquegon2009@gmail.com",
+    "copyright": "© {{year}} João Henrique Gonçalves. Todos os direitos reservados."
+  },
+  "navigation": {
+    "logo": "JH.",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "technologies": "Tecnologias",
+    "contact": "Contato",
+    "talkToMe": "Fale Comigo",
+    "location": "São Paulo — Since 2019",
+    "business": "Business Enquiries"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "subtitle": "Frontend Developer & Designer",
+    "title": "JOÃO HENRIQUE GONÇALVES",
+    "description": "Impactful design and performance engineering: creating digital experiences where movement, technology, and usability meet.",
+    "scroll": "Scroll to experience",
+    "scrollMobile": "Scroll"
+  },
+  "work": {
+    "title": "ON THE ROAD",
+    "number": "01",
+    "description": "Selected works focused on high-performance interfaces and brand storytelling.",
+    "explore": "Scroll to explore →",
+    "caseStudy": "View Case Study"
+  },
+  "about": {
+    "title": "OFF THE ROAD",
+    "number": "02",
+    "philosophy": "My philosophy is simple: <strong>Frontend is the first impression.</strong> It shouldn't just work; it should feel alive. I combine engineering precision with a chaotic love for motion design.",
+    "description": "Based in Brazil, I work where engineering meets movement, combining technical precision with motion design to create experiences that feel alive, not artificial. Specialist in the React ecosystem, but my true tool is visual problem-solving.",
+    "experience": "Experience"
+  },
+  "partnerships": {
+    "title": "Ecosystem & Architecture",
+    "subtitle": "Perceived performance. <span>Intent-driven code.</span>",
+    "description": "I don't use tools just for convenience. I select technologies that allow transforming identity into digital experience. A stack designed for fluidity, where <strong>motion design</strong> is part of engineering, not just decoration.",
+    "pause": "Click to pause",
+    "play": "Click to continue"
+  },
+  "contact": {
+    "title": "LET'S TALK",
+    "email": "joaohenriquegon2009@gmail.com",
+    "copyright": "© {{year}} João Henrique Gonçalves. All rights reserved."
+  },
+  "navigation": {
+    "logo": "JH.",
+    "projects": "Projects",
+    "about": "About",
+    "technologies": "Technologies",
+    "contact": "Contact",
+    "talkToMe": "Talk to Me",
+    "location": "São Paulo — Since 2019",
+    "business": "Business Enquiries"
+  }
+}

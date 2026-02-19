@@ -2,8 +2,10 @@ import React from 'react';
 import { Reveal } from './Reveal';
 import { SOCIALS } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="py-24 md:py-32 px-6 md:px-12 lg:px-24 bg-brand-dark relative">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
@@ -15,9 +17,11 @@ const Contact: React.FC = () => {
             */}
             <a href="mailto:hello@joaohenrique.dev" className="block cursor-pointer">
                 <h2 className="text-4xl md:text-8xl lg:text-9xl font-display font-bold text-white tracking-tighter mb-8 md:mb-12">
-                    <span className="transition-colors duration-500 hover:text-brand-accent">VAMOS</span>
-                    {' '}
-                    <span className="transition-colors duration-500 hover:text-brand-accent">CONVERSAR</span>
+                    {t('contact.title').split(' ').map((word, index) => (
+                        <span key={index} className="transition-colors duration-500 hover:text-brand-accent mr-4 last:mr-0">
+                            {word}
+                        </span>
+                    ))}
                 </h2>
             </a>
         </Reveal>
@@ -27,7 +31,7 @@ const Contact: React.FC = () => {
                 href="mailto:joaohenriquegon2009@gmail.com" 
                 className="text-xl md:text-3xl font-light text-brand-accent hover:text-white transition-colors border-b-2 border-brand-accent hover:border-white pb-2 mb-16 md:mb-24 inline-block break-all md:break-normal"
             >
-                joaohenriquegon2009@gmail.com
+                {t('contact.email')}
             </a>
         </Reveal>
 
@@ -46,7 +50,7 @@ const Contact: React.FC = () => {
             </div>
             
             <p className="text-white/30 text-xs md:text-sm font-mono text-center md:text-right">
-                © {new Date().getFullYear()} João Henrique Gonçalves. <br className="md:hidden"/>Todos os direitos reservados.
+                {t('contact.copyright', { year: new Date().getFullYear() })}
             </p>
         </div>
       </div>

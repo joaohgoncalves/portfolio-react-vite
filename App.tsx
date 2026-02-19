@@ -27,8 +27,10 @@ const AppContent: React.FC = () => {
         style={{ scaleX }}
       />
 
+      {/* <LanguageSwitcher /> */}
+
       <Navigation />
-      
+
       <main className="relative z-10">
         <Hero />
         <Work />

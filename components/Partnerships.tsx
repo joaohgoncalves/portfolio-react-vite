@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Reveal } from './Reveal';
+import { useTranslation } from 'react-i18next';
 
 const STACK = [
   // Frontend / Web
@@ -43,6 +44,7 @@ const STACK = [
 
 const Partnerships: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <section id="partners" className="py-24 md:py-32 bg-brand-dark border-t border-white/5 overflow-hidden flex flex-col justify-center">
@@ -53,20 +55,17 @@ const Partnerships: React.FC = () => {
             <div>
                 <Reveal>
                     <h2 className="text-brand-accent font-mono text-xs md:text-sm mb-6 uppercase tracking-[0.2em]">
-                        Ecossistema & Arquitetura
+                        {t('partnerships.title')}
                     </h2>
                 </Reveal>
                 <Reveal delay={0.1}>
-                    <p className="text-3xl md:text-5xl font-display font-bold text-white leading-[1.1] tracking-tight">
-                        Performance perceptiva. <br />
-                        <span className="text-white/40">Código orientado à intenção.</span>
+                    <p className="text-3xl md:text-5xl font-display font-bold text-white leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('partnerships.subtitle') }}>
                     </p>
                 </Reveal>
             </div>
             <div className="md:pl-12">
                 <Reveal delay={0.2}>
-                    <p className="text-white/60 text-sm md:text-base leading-relaxed font-light">
-                        Não utilizo ferramentas apenas por conveniência. Seleciono tecnologias que permitem transformar identidade em experiência digital. Uma stack desenhada para fluidez, onde o <strong className="text-white font-medium">motion design</strong> faz parte da engenharia, não apenas da decoração.
+                    <p className="text-white/60 text-sm md:text-base leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: t('partnerships.description') }}>
                     </p>
                 </Reveal>
             </div>
@@ -77,7 +76,7 @@ const Partnerships: React.FC = () => {
       <div 
         className="relative w-full py-8 border-y border-white/5 bg-brand-gray/20 cursor-pointer"
         onClick={() => setIsPaused(!isPaused)}
-        title={isPaused ? "Clique para continuar" : "Clique para pausar"}
+        title={isPaused ? t('partnerships.play') : t('partnerships.pause')}
       >
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-brand-dark via-transparent to-brand-dark pointer-events-none" />
         

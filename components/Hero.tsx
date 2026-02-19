@@ -2,10 +2,12 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { useCursor } from './CursorContext';
+import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
   const { scrollY } = useScroll();
   const { setCursorVariant } = useCursor();
+  const { t } = useTranslation();
   
   // Parallax effects
   const textY = useTransform(scrollY, [0, 1000], [0, 300]); 
@@ -21,7 +23,7 @@ const Hero: React.FC = () => {
   const scrollButtonOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const scrollButtonY = useTransform(scrollY, [0, 300], [0, 50]);
 
-  const words = "Design de impacto e engenharia de performance: criando experiências digitais onde movimento, tecnologia e usabilidade se encontram.".split(" ");
+  const words = t('hero.description').split(" ");
 
   const handleScrollClick = () => {
     const element = document.getElementById('work');
@@ -56,7 +58,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-brand-accent font-mono text-xs md:text-sm mb-4 tracking-widest uppercase"
         >
-          Frontend Developer & Designer
+          {t('hero.subtitle')}
         </motion.p>
         
         {/* Responsive Typography: 5xl on mobile -> 9xl on desktop */}
@@ -158,8 +160,8 @@ const Hero: React.FC = () => {
             onMouseLeave={() => setCursorVariant('default')}
         >
             <ArrowDown size={20} />
-            <span className="hidden md:inline text-xs uppercase tracking-widest">Role para experienciar</span>
-            <span className="md:hidden text-xs uppercase tracking-widest">Scroll</span>
+            <span className="hidden md:inline text-xs uppercase tracking-widest">{t('hero.scroll')}</span>
+            <span className="md:hidden text-xs uppercase tracking-widest">{t('hero.scrollMobile')}</span>
         </motion.div>
       </motion.div>
     </section>

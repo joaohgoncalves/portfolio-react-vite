@@ -1,10 +1,12 @@
 import { Project, Experience, NavItem, SocialLink } from './types';
 
+import { Project, Experience, NavItem, SocialLink } from './types';
+
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Projetos', href: '#work' },
-  { label: 'Sobre', href: '#about' },
-  { label: 'Tecnologias', href: '#partners' },
-  { label: 'Contato', href: '#contact' },
+  { label: 'navigation.projects', href: '#work' },
+  { label: 'navigation.about', href: '#about' },
+  { label: 'navigation.technologies', href: '#partners' },
+  { label: 'navigation.contact', href: '#contact' },
 ];
 
 export const PROJECTS: Project[] = [

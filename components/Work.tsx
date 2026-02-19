@@ -2,12 +2,14 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { PROJECTS } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Work: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [scrollRange, setScrollRange] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,12 +72,12 @@ const Work: React.FC = () => {
             {/* Intro Block */}
             <div className={`${isDesktop ? 'w-[30vw] shrink-0' : 'w-full mb-12'}`}>
                  <h2 className="text-5xl md:text-8xl font-display font-bold text-white tracking-tighter mb-6 md:mb-8">
-                    EM ROTA <span className="text-brand-accent text-lg align-top">01</span>
+                    {t('work.title')} <span className="text-brand-accent text-lg align-top">{t('work.number')}</span>
                 </h2>
                 <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-md">
-                    Trabalhos selecionados com foco em interfaces de alta performance e storytelling de marca.
+                    {t('work.description')}
                     <br /><br />
-                    {isDesktop && <span className="text-sm font-mono opacity-50 uppercase tracking-widest">Role para explorar &rarr;</span>}
+                    {isDesktop && <span className="text-sm font-mono opacity-50 uppercase tracking-widest">{t('work.explore')}</span>}
                 </p>
             </div>
 
@@ -122,7 +124,7 @@ const Work: React.FC = () => {
                         className="inline-flex items-center gap-2 text-white hover:text-brand-accent transition-colors group/link"
                       >
                         <span className="uppercase tracking-widest text-xs md:text-sm font-medium border-b border-transparent group-hover/link:border-brand-accent pb-0.5">
-                          Ver Estudo de Caso
+                          {t('work.caseStudy')}
                         </span>
                         <ArrowUpRight
                           size={16}

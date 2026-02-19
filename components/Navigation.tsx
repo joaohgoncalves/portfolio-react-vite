@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Zap } from 'lucide-react';
 import { NAV_ITEMS, SOCIALS } from '../constants';
 import MenuBackground from './MenuBackground';
+import { useTranslation } from 'react-i18next';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +69,7 @@ const Navigation: React.FC = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className={`text-xl font-bold font-display tracking-tight text-white uppercase pointer-events-auto transition-opacity duration-300 ${isOpen ? 'opacity-0 md:opacity-100' : 'opacity-100'}`}
           >
-            JH<span className="text-brand-accent">.</span>
+            {t('navigation.logo')}
           </a>
 
           {/* Desktop Nav */}
@@ -79,7 +81,7 @@ const Navigation: React.FC = () => {
                 onClick={(e) => handleNavClick(e, item.href)}
                 className="text-sm font-medium text-white/70 hover:text-brand-accent transition-colors uppercase tracking-widest"
               >
-                {item.label}
+                {t(item.label)}
               </a>
             ))}
           </nav>
@@ -130,7 +132,7 @@ const Navigation: React.FC = () => {
 
                     {/* Text */}
                     <span className="relative z-10 font-display font-bold text-sm uppercase tracking-wider text-white">
-                        Fale Comigo
+                        {t('navigation.talkToMe')}
                     </span>
                 </motion.a>
 
@@ -159,7 +161,7 @@ const Navigation: React.FC = () => {
                     onClick={(e) => handleNavClick(e, item.href)}
                     className="text-5xl font-display font-bold text-white uppercase tracking-tighter hover:text-brand-accent transition-colors leading-none text-center"
                     >
-                    {item.label}
+                    {t(item.label)}
                     </motion.a>
                 ))}
                 </nav>
@@ -177,7 +179,7 @@ const Navigation: React.FC = () => {
                         <span className="text-xl">{')'}</span>
                      </div>
                      <span className="text-white/40 text-[10px] font-mono tracking-[0.2em] uppercase">
-                        São Paulo — Since 2019
+                        {t('navigation.location')}
                      </span>
                 </motion.div>
             </div>
@@ -191,7 +193,7 @@ const Navigation: React.FC = () => {
                     className="flex flex-col items-center gap-8"
                 >
                     <a href="mailto:hello@joaohenrique.dev" className="text-white font-display font-bold uppercase tracking-widest text-sm hover:text-brand-accent transition-colors">
-                        Business Enquiries
+                        {t('navigation.business')}
                     </a>
 
                     <div className="flex flex-wrap justify-center gap-6">
