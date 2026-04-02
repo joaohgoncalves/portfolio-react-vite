@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reveal } from './Reveal';
-import { EXPERIENCE } from '../constants';
+import { EXPERIENCE } from '@/data/experience';
 import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
