@@ -92,8 +92,11 @@ const Work: React.FC = () => {
                      <div className="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none mix-blend-overlay" />
                      <img 
                         src={project.imageUrl} 
-                        alt={project.title}
+                        alt={`${t(project.title)} - ${t(project.category)} project developed with ${project.tags.join(', ')}`}
+                        title={`${t(project.title)} (${project.year})`}
                         className="object-cover w-full h-full grayscale md:grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-105" 
+                        loading="lazy"
+                        decoding="async"
                      />
                   </div>
 

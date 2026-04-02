@@ -8,9 +8,12 @@ import Hero from '@/components/Hero';
 import Work from '@/components/Work';
 import About from '@/components/About';
 import Partnerships from '@/components/Partnerships';
+import FAQ from '@/components/FAQ';
+import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import BackgroundReveal from '@/components/BackgroundReveal';
 import SEO from '@/components/SEO';
+import PerformanceMonitor from '@/components/PerformanceMonitor';
 
 const AppContent: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -28,11 +31,14 @@ const AppContent: React.FC = () => {
         style={{ scaleX }}
       />
       <Navigation />
+      <PerformanceMonitor />
       <main className="relative z-10">
         <Hero />
         <Work />
         <About />
         <Partnerships />
+        <FAQ />
+        <Testimonials />
         <Contact />
       </main>
     </div>
