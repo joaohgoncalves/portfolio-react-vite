@@ -1,9 +1,9 @@
-import { CLS, FID, FCP, LCP, TTFB, Metric } from 'web-vitals';
+import { getCLS, getFID, getFCP, getLCP, getTTFB, Metric } from 'web-vitals';
 
 interface VitalsData {
   name: string;
   value: number;
-  rating: 'good' | 'needs improvement' | 'poor';
+  rating: 'good' | 'needs-improvement' | 'poor';
   delta: number;
 }
 
@@ -30,15 +30,15 @@ class WebVitalsService {
   private initWebVitals(): void {
     // Dynamically import web-vitals to avoid loading in SSR
     if (typeof window !== 'undefined') {
-      Promise.all([
-        import('web-vitals').then((module) => {
-          module.getCLS(this.handleMetric.bind(this));
-          module.getFID(this.handleMetric.bind(this));
-          module.getFCP(this.handleMetric.bind(this));
-          module.getLCP(this.handleMetric.bind(this));
-          module.getTTFB(this.handleMetric.bind(this));
-        }),
-      ]).catch((err) => console.error('Failed to load web-vitals:', err));
+      try {
+        getCLS(this.handleMetric.bind(this));
+        getFID(this.handleMetric.bind(this));
+        getFCP(this.handleMetric.bind(this));
+        getLCP(this.handleMetric.bind(this));
+        getTTFB(this.handleMetric.bind(this));
+      } catch (err) {
+        console.error('Failed to initialize web-vitals:', err);
+      }
     }
   }
 
@@ -46,7 +46,7 @@ class WebVitalsService {
     const vitalsData: VitalsData = {
       name: metric.name,
       value: metric.value,
-      rating: metric.rating || 'needs improvement',
+      rating: metric.rating ?? 'needs-improvement',
       delta: metric.delta ?? 0,
     };
 
@@ -101,10 +101,7 @@ class WebVitalsService {
     }
 
     return vitals
-      .map(
-        (vital) =>
-          `${vital.name}: ${vital.value.toFixed(2)}ms (${vital.rating})`
-      )
+      .map((vital) => `${vital.name}: ${vital.value.toFixed(2)}ms (${vital.rating})`)
       .join('\n');
   }
 }
