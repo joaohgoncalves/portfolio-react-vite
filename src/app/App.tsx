@@ -3,14 +3,14 @@ import { HelmetProvider } from 'react-helmet-async';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Work from './components/Work';
-import About from './components/About';
-import Partnerships from './components/Partnerships';
-import Contact from './components/Contact';
-import BackgroundReveal from './components/BackgroundReveal';
-import SEO from './components/SEO';
+import Navigation from '@/components/Navigation';
+import Hero from '@/components/Hero';
+import Work from '@/components/Work';
+import About from '@/components/About';
+import Partnerships from '@/components/Partnerships';
+import Contact from '@/components/Contact';
+import BackgroundReveal from '@/components/BackgroundReveal';
+import SEO from '@/components/SEO';
 
 const AppContent: React.FC = () => {
   const { scrollYProgress } = useScroll();
