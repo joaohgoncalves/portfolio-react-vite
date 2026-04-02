@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Work from './components/Work';
@@ -9,30 +10,24 @@ import About from './components/About';
 import Partnerships from './components/Partnerships';
 import Contact from './components/Contact';
 import BackgroundReveal from './components/BackgroundReveal';
+import SEO from './components/SEO';
 
 const AppContent: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   return (
     <div className="bg-brand-dark min-h-screen text-white selection:bg-brand-accent selection:text-white">
-       {/* Background Abstract Reveal */}
-       <BackgroundReveal />
-
-       {/* Custom Scroll Progress */}
-       <motion.div
+      <BackgroundReveal />
+      <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-brand-accent origin-left z-[100]"
         style={{ scaleX }}
       />
-
-      {/* <LanguageSwitcher /> */}
-
       <Navigation />
-
       <main className="relative z-10">
         <Hero />
         <Work />
@@ -44,20 +39,21 @@ const AppContent: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
-  return (
-    <>
-      <Analytics />
-      <SpeedInsights />
-      <Suspense fallback={
+const App: React.FC = () => (
+  <HelmetProvider>
+    <Analytics />
+    <SpeedInsights />
+    <SEO />
+    <Suspense
+      fallback={
         <div className="min-h-screen bg-brand-dark flex items-center justify-center">
           <div className="text-white text-xl">Carregando...</div>
         </div>
-      }>
-        <AppContent />
-      </Suspense>
-    </>
-  );
-};
+      }
+    >
+      <AppContent />
+    </Suspense>
+  </HelmetProvider>
+);
 
 export default App;
