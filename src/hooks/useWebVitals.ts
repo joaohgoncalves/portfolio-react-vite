@@ -12,7 +12,7 @@ interface UseVitalsReturn {
   vitals: VitalsData[];
   isLoaded: boolean;
   lcp?: VitalsData;
-  fid?: VitalsData;
+  inp?: VitalsData;
   cls?: VitalsData;
   fcp?: VitalsData;
   ttfb?: VitalsData;
@@ -44,7 +44,7 @@ export function useWebVitals(): UseVitalsReturn {
     vitals,
     isLoaded,
     lcp: vitals.find((v) => v.name === 'LCP'),
-    fid: vitals.find((v) => v.name === 'FID'),
+    inp: vitals.find((v) => v.name === 'INP') || vitals.find((v) => v.name === 'FID'),
     cls: vitals.find((v) => v.name === 'CLS'),
     fcp: vitals.find((v) => v.name === 'FCP'),
     ttfb: vitals.find((v) => v.name === 'TTFB'),

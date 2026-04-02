@@ -136,7 +136,8 @@ const FAQ: React.FC = () => {
               Perguntas Frequentes
             </h2>
             <p className="text-white/60 text-base md:text-lg leading-relaxed">
-              Dúvidas técnicas, processuais ou profissionais? Aqui estão respostas sobre minha abordagem, tecnologias e como trabalho.
+              Dúvidas técnicas, processuais ou profissionais? Aqui estão respostas sobre minha
+              abordagem, tecnologias e como trabalho.
             </p>
           </div>
 

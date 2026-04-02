@@ -28,10 +28,7 @@ const SEO: React.FC<Props> = ({
     jobTitle: 'Full Stack Developer',
     description: description,
     email: 'joaohenriquegon2009@gmail.com',
-    sameAs: [
-      'https://github.com/joaohgoncalves',
-      'https://linkedin.com/in/joaohgoncalves',
-    ],
+    sameAs: ['https://github.com/joaohgoncalves', 'https://linkedin.com/in/joaohgoncalves'],
     worksFor: {
       '@type': 'Organization',
       name: 'Freelance',

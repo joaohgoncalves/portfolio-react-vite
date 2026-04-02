@@ -11,7 +11,7 @@ interface ProjectStore {
   projects: Project[];
   filters: ProjectFilters;
   filteredProjects: Project[];
-  
+
   setProjects: (projects: Project[]) => void;
   updateFilter: (key: keyof ProjectFilters, value: any) => void;
   toggleTag: (tag: string) => void;
@@ -49,7 +49,7 @@ export const useProjectStore = create<ProjectStore>((set) => ({
       const newTags = state.filters.tags.includes(tag)
         ? state.filters.tags.filter((t) => t !== tag)
         : [...state.filters.tags, tag];
-      
+
       const newFilters = { ...state.filters, tags: newTags };
       return {
         filters: newFilters,
@@ -77,8 +77,7 @@ function filterProjects(projects: Project[], filters: ProjectFilters): Project[]
       project.description.toLowerCase().includes(filters.search.toLowerCase());
 
     const matchTags =
-      filters.tags.length === 0 ||
-      filters.tags.some((tag) => project.tags.includes(tag));
+      filters.tags.length === 0 || filters.tags.some((tag) => project.tags.includes(tag));
 
     const matchYear = !filters.year || project.year === filters.year;
 

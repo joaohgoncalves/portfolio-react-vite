@@ -43,17 +43,12 @@ const PerformanceMonitor: React.FC = () => {
             {isLoaded && vitals.length > 0 ? (
               <ul className="space-y-2">
                 {vitals.map((vital) => (
-                  <li
-                    key={vital.name}
-                    className="flex justify-between items-center text-xs"
-                  >
+                  <li key={vital.name} className="flex justify-between items-center text-xs">
                     <span className="text-white/70">{vital.name}</span>
                     <span className={`font-mono ${getRatingColor(vital.rating)}`}>
                       {vital.value.toFixed(0)}ms
                     </span>
-                    <span className="text-white/50 text-[10px]">
-                      ({vital.rating})
-                    </span>
+                    <span className="text-white/50 text-[10px]">({vital.rating})</span>
                   </li>
                 ))}
               </ul>
@@ -65,7 +60,7 @@ const PerformanceMonitor: React.FC = () => {
             <div className="mt-4 pt-4 border-t border-white/10 text-[10px] text-white/40">
               <p className="mb-2 font-mono text-white/60">Thresholds:</p>
               <p>• LCP: &lt;2.5s (good)</p>
-              <p>• FID: &lt;100ms (good)</p>
+              <p>• INP: &lt;200ms (good)</p>
               <p>• CLS: &lt;0.1 (good)</p>
               <p>• FCP: &lt;1.8s (good)</p>
               <p>• TTFB: &lt;600ms (good)</p>

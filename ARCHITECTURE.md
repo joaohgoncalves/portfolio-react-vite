@@ -23,6 +23,7 @@ Data Models (Types)
 ## 🏢 Estrutura de Pastas
 
 ### `src/app/`
+
 **Responsabilidade**: Configuração global da aplicação.
 
 - `App.tsx` — Componente raiz
@@ -33,6 +34,7 @@ Data Models (Types)
 **Por quê separado?** Evita poluir raiz. Centraliza setup.
 
 ### `src/components/`
+
 **Responsabilidade**: Componentes **dumb/presentacional** (sem lógica de negócio).
 
 ```
@@ -46,6 +48,7 @@ components/
 **Regra**: Se precisa estado complexo → move pra hook/store.
 
 ### `src/features/`
+
 **Responsabilidade**: Domícnios de negócio isolados. **Feature = setor autônomo**.
 
 ```
@@ -67,6 +70,7 @@ features/projects/
 **Vantagem**: Copiar `features/projects` para outro projeto = funciona igual.
 
 ### `src/store/`
+
 **Responsabilidade**: Estado global com Zustand.
 
 ```
@@ -78,12 +82,14 @@ store/
 ```
 
 **Por quê Zustand ao invés de Redux/Context?**
+
 - ✅ Simples
 - ✅ Sem boilerplate
 - ✅ Performático (subscriptions seletivas)
 - ✅ TypeScript first
 
 ### `src/services/`
+
 **Responsabilidade**: Abstrair API/data sources.
 
 ```
@@ -97,6 +103,7 @@ services/
 **Regra dourada**: Componentes não fazem fetch. Sempre via service + hook.
 
 ### `src/hooks/`
+
 **Responsabilidade**: Lógica reutilizável separada de componentes.
 
 ```
@@ -109,11 +116,13 @@ hooks/
 ```
 
 **Exemplo de uso**:
+
 ```tsx
 const { filteredProjects, filters, updateFilter } = useProjects();
 ```
 
 ### `src/types/`
+
 **Responsabilidade**: Type definitions por domínio.
 
 ```
@@ -125,6 +134,7 @@ types/
 ```
 
 ### `src/data/`
+
 **Responsabilidade**: Dados estáticos (não mudam em runtime).
 
 ```
@@ -157,6 +167,7 @@ data/
 ```
 
 **Key points**:
+
 - ✅ Componente só dispara ação, não faz lógica
 - ✅ Store centraliza estado
 - ✅ Hook expõe interface limpa
@@ -167,20 +178,24 @@ data/
 ## 🎯 Por que cada decisão?
 
 ### 1. Zustand vs Redux
+
 **Redux**: muito boilerplate para o tamanho do projeto.  
 **Zustand**: minimalista, direto ao ponto, 0 boilerplate.
 
 ### 2. Separar componentes vs features
+
 **Componente**: Button, Card, Navigation (genéricos).  
 **Feature**: Projects (domínio específico com lógica).
 
 **Benefício**: Features são **exportáveis**. Copia `features/projects` pra outro projeto, funciona.
 
 ### 3. Service layer
+
 **Sem service**: `useEffect(...fetch...)` espalhado pelos componentes.  
 **Com service**: Centralizad, testável, fácil de mock.
 
 ### 4. Hooks customizados
+
 **Sem hook**: Lógica de filtro misturada em componente.  
 **Com hook**: Lógica isolada, reutilizável, testável.
 
@@ -189,13 +204,16 @@ data/
 ## 🚀 Como Adicionar Feature Nova
 
 ### Passo 1: Criar estrutura
+
 ```bash
 mkdir -p src/features/nova-feature/{components,hooks,services}
 touch src/features/nova-feature/{types.ts,index.ts}
 ```
 
 ### Passo 2: Definir types
+
 `src/features/nova-feature/types.ts`:
+
 ```ts
 export interface NovaCoisa {
   id: string;
@@ -205,7 +223,9 @@ export interface NovaCoisa {
 ```
 
 ### Passo 3: Criar service
+
 `src/features/nova-feature/services/api.ts`:
+
 ```ts
 export async function fetchNovaCoisas(): Promise<NovaCoisa[]> {
   // API call ou mock
@@ -213,21 +233,25 @@ export async function fetchNovaCoisas(): Promise<NovaCoisa[]> {
 ```
 
 ### Passo 4: Criar hook
+
 `src/features/nova-feature/hooks/useNovaCoisas.ts`:
+
 ```ts
 export function useNovaCoisas() {
   const [data, setData] = useState<NovaCoisa[]>([]);
-  
+
   useEffect(() => {
     fetchNovaCoisas().then(setData);
   }, []);
-  
+
   return { data };
 }
 ```
 
 ### Passo 5: Criar componentes
+
 `src/features/nova-feature/components/NovaCoisa.tsx`:
+
 ```tsx
 export default function NovaCoisa() {
   const { data } = useNovaCoisas();
@@ -236,7 +260,9 @@ export default function NovaCoisa() {
 ```
 
 ### Passo 6: Re-exportar em index.ts
+
 `src/features/nova-feature/index.ts`:
+
 ```ts
 export { default as NovaCoisa } from './components/NovaCoisa';
 export { useNovaCoisas } from './hooks/useNovaCoisas';
@@ -244,6 +270,7 @@ export * from './types';
 ```
 
 ### Pronto!
+
 ```tsx
 import { NovaCoisa, useNovaCoisas } from '@/features/nova-feature';
 ```
@@ -253,16 +280,19 @@ import { NovaCoisa, useNovaCoisas } from '@/features/nova-feature';
 ## 📊 Performance Considerations
 
 ### Code Splitting
+
 - Features lazy-loaded via dynamic imports
 - `src/app/routes.tsx` aplica React.lazy()
 
 ### Bundle
+
 ```
 npm run build
 # Analisa dist/ — vendors separados via rollupOptions.manualChunks
 ```
 
 ### State Efficiency
+
 - Zustand apenas suscribe ao que muda
 - FilterProjects = função pura (sem re-renders desnecessários)
 
@@ -271,13 +301,16 @@ npm run build
 ## 🧪 Testing Strategy
 
 ### Unit Tests
+
 - `store/projectStore.test.ts` — filterProjects logic
 - `services/projects.test.ts` — mock API
 
 ### Integration Tests
+
 - `hooks/useProjects.test.ts` — hook com store + service
 
 ### E2E
+
 - Cypress: "User filters projects and sees result"
 
 ---
@@ -290,6 +323,6 @@ Esta arquitetura escala porque:
 ✅ Features são independentes e reutilizáveis  
 ✅ Lógica é testável (funções puras)  
 ✅ Componentes são dumb e simples  
-✅ Estado é centralizado e predicível  
+✅ Estado é centralizado e predicível
 
 **Resultado**: Código profissional que cresce sem virar bagunça.

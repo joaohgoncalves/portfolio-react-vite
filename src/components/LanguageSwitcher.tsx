@@ -23,7 +23,9 @@ const LanguageSwitcher: React.FC = () => {
       <button
         onClick={() => changeLanguage('pt')}
         className={`px-3 py-1 rounded text-xs font-mono uppercase tracking-wider ${
-          i18n.language === 'pt' ? 'bg-brand-accent text-white' : 'bg-white/10 text-white/60 hover:text-white'
+          i18n.language === 'pt'
+            ? 'bg-brand-accent text-white'
+            : 'bg-white/10 text-white/60 hover:text-white'
         } transition-colors`}
       >
         PT
@@ -31,7 +33,9 @@ const LanguageSwitcher: React.FC = () => {
       <button
         onClick={() => changeLanguage('en')}
         className={`px-3 py-1 rounded text-xs font-mono uppercase tracking-wider ${
-          i18n.language === 'en' ? 'bg-brand-accent text-white' : 'bg-white/10 text-white/60 hover:text-white'
+          i18n.language === 'en'
+            ? 'bg-brand-accent text-white'
+            : 'bg-white/10 text-white/60 hover:text-white'
         } transition-colors`}
       >
         EN

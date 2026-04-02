@@ -1,9 +1,9 @@
-import { getCLS, getFID, getFCP, getLCP, getTTFB, Metric } from 'web-vitals';
+import { onCLS, onFCP, onINP, onLCP, onTTFB, Metric } from 'web-vitals';
 
 interface VitalsData {
   name: string;
   value: number;
-  rating: 'good' | 'needs-improvement' | 'poor';
+  rating: 'good' | 'needs improvement' | 'poor';
   delta: number;
 }
 
@@ -31,11 +31,11 @@ class WebVitalsService {
     // Dynamically import web-vitals to avoid loading in SSR
     if (typeof window !== 'undefined') {
       try {
-        getCLS(this.handleMetric.bind(this));
-        getFID(this.handleMetric.bind(this));
-        getFCP(this.handleMetric.bind(this));
-        getLCP(this.handleMetric.bind(this));
-        getTTFB(this.handleMetric.bind(this));
+        onCLS(this.handleMetric.bind(this));
+        onINP(this.handleMetric.bind(this));
+        onFCP(this.handleMetric.bind(this));
+        onLCP(this.handleMetric.bind(this));
+        onTTFB(this.handleMetric.bind(this));
       } catch (err) {
         console.error('Failed to initialize web-vitals:', err);
       }
@@ -43,10 +43,15 @@ class WebVitalsService {
   }
 
   private handleMetric(metric: Metric): void {
+    const normalizedRating =
+      metric.rating === 'needs-improvement'
+        ? 'needs improvement'
+        : metric.rating ?? 'needs improvement';
+
     const vitalsData: VitalsData = {
       name: metric.name,
       value: metric.value,
-      rating: metric.rating ?? 'needs-improvement',
+      rating: normalizedRating,
       delta: metric.delta ?? 0,
     };
 

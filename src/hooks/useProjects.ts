@@ -9,7 +9,15 @@ import { fetchProjects } from '@/services/projects';
  */
 
 export function useProjects() {
-  const { projects, filteredProjects, filters, setProjects, updateFilter, toggleTag, clearFilters } = useProjectStore();
+  const {
+    projects,
+    filteredProjects,
+    filters,
+    setProjects,
+    updateFilter,
+    toggleTag,
+    clearFilters,
+  } = useProjectStore();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

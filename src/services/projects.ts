@@ -19,7 +19,8 @@ export async function fetchProjects(): Promise<Project[]> {
       category: 'E-commerce',
       description: 'work.projects.modeloVapor.description',
       year: '2025',
-      imageUrl: 'https://github.com/joaohgoncalves/Modelo-Vapor-Wordpress/blob/main/banner.png?raw=true',
+      imageUrl:
+        'https://github.com/joaohgoncalves/Modelo-Vapor-Wordpress/blob/main/banner.png?raw=true',
       tags: ['WordPress', 'Elementor', 'PHP'],
       caseUrl: 'https://github.com/joaohgoncalves/Modelo-Vapor-Wordpress',
     },
@@ -29,7 +30,8 @@ export async function fetchProjects(): Promise<Project[]> {
       category: 'Legal',
       description: 'work.projects.websiteJuridico.description',
       year: '2025',
-      imageUrl: 'https://github.com/joaohgoncalves/Website-Juridico-Template-WordPress-com-Elementor/blob/main/banner.png?raw=true',
+      imageUrl:
+        'https://github.com/joaohgoncalves/Website-Juridico-Template-WordPress-com-Elementor/blob/main/banner.png?raw=true',
       tags: ['WordPress', 'Elementor', 'Design'],
       caseUrl: 'https://exemplo.com',
     },
@@ -39,7 +41,8 @@ export async function fetchProjects(): Promise<Project[]> {
       category: 'Portfolio',
       description: 'work.projects.portfolio.description',
       year: '2026',
-      imageUrl: 'https://github.com/joaohgoncalves/portfolio-react-vite/blob/main/banner.png?raw=true',
+      imageUrl:
+        'https://github.com/joaohgoncalves/portfolio-react-vite/blob/main/banner.png?raw=true',
       tags: ['React', 'TypeScript', 'Vite', 'Zustand'],
       caseUrl: 'https://github.com/joaohgoncalves/portfolio-react-vite',
     },
