@@ -1,4 +1,4 @@
-import i18n from '../i18n';
+import i18n from './i18n';
 
 test('i18n is initialized and fallback language is set', () => {
   expect(i18n.isInitialized).toBe(true);
