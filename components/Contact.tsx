@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reveal } from './Reveal';
-import { SOCIALS } from '../constants';
+import { SOCIALS } from '@/data/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 

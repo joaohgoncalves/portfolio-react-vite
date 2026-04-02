@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Zap } from 'lucide-react';
-import { NAV_ITEMS, SOCIALS } from '../constants';
+import { NAV_ITEMS, SOCIALS } from '@/data/navigation';
 import MenuBackground from './MenuBackground';
 import { useTranslation } from 'react-i18next';
 

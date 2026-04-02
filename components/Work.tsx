@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { PROJECTS } from '../constants';
+import { PROJECTS } from '@/data/projects';
 import { ArrowUpRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
