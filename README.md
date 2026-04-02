@@ -1,93 +1,62 @@
-# 💼 Portfólio Profissional
+# 💼 Portfolio React Vite
 
-[![Status](https://img.shields.io/badge/status-finalizado-brightgreen)](#)
-[![Deploy](https://img.shields.io/badge/deploy-online-success)](#)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub last commit](https://img.shields.io/github/last-commit/joaohgoncalves/portfolio-react-vite)](#)
+Projeto de portfólio pessoal com foco em entrega técnica profissional, organização de código, performance e SEO.
 
-Este projeto consiste em um **portfólio profissional finalizado**, desenvolvido para apresentar projetos, experiências e competências técnicas, com foco em **UX, performance, arquitetura moderna e entrega em produção**.
+## ✅ O que foi ajustado
 
----
+- Corrigido `git clone` e instruções para `portfolio-react-vite`.
+- Fluxo de branches sugerido: `main`, `develop`, `feature/*`, `release/*`, `hotfix/*`.
+- Preparado para `vitest` e CI no GitHub Actions.
+- Documentação de i18n, SEO e performance atualizada.
+- Cuidados de tipagem TypeScript reforçados.
 
-## ✅ Status do Projeto
+## 📦 Como rodar
 
-- ✅ **Projeto finalizado**
-- 🚀 **Deploy em produção**
-- 🔒 Código estável e versionado
-- 📱 Totalmente responsivo
-
----
-
-## ✨ Funcionalidades
-
-- ✅ Layout moderno e profissional  
-- ✅ Navegação fluida e intuitiva  
-- ✅ Seção de projetos com estudos de caso  
-- ✅ Estrutura componentizada e escalável  
-- ✅ SEO técnico básico implementado  
-- ✅ Performance otimizada  
-
----
-
-## 💡 Tecnologias Utilizadas
-
-[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
-
----
-
-## 🌐 Deploy
-
-A aplicação está disponível em produção:
-https://joaogoncalvesdev.vercel.app/
-
-Plataforma de deploy utilizada:
-- Vercel
-
----
-
-## 🚀 Como Executar Localmente
-
-1. Clone o repositório:
 ```bash
-git clone https://github.com/joaohgoncalves/portfolio.git
-```
-
-2. Acesse a pasta do projeto:
-```bash
-cd portfolio
-```
-
-3. Instale as dependências:
-```bash
+git clone https://github.com/joaohgoncalves/portfolio-react-vite.git
+cd portfolio-react-vite
 npm install
-```
-
-4. Execute o projeto:
-```bash
 npm run dev
 ```
 
----
+## 🧪 Testes
 
-## 🧱 Arquitetura
+```bash
+npm run test
+npm run test:coverage
+```
 
-- Mono Architecture  
-- Componentização  
-- Separação de responsabilidades  
-- Código limpo e escalável  
+## 🚀 Scripts úteis
 
----
+- `npm run dev` - servidor local
+- `npm run build` - build de produção
+- `npm run preview` - preview de build em `localhost`
+- `npm run test` - executa Vitest
+- `npm run test:coverage` - coverage
 
-## 📝 Observações
+## 🌿 Branching & versionamento
 
-Projeto de caráter **profissional**, utilizado como vitrine técnica e presença digital.
+1. `main` - produção
+2. `develop` - integração contínua
+3. `feature/<nome>` - features pequenas
+4. `release/<x.y.z>` - lançamento com QA
+5. `hotfix/<x.y.z>` - correção emergencial
 
----
+## 🌐 Internacionalização
 
-## 📌 Licença
+- Implementa `react-i18next` com `i18next-browser-languagedetector`
+- `en` fallback para idiomas não suportados
 
-Distribuído sob a licença MIT.
+## 🧠 SEO
+
+- `index.html` deve conter meta tags dinâmicas e Open Graph (ajuste manual se precisar)
+- Use `react-helmet-async` ou `@remix-run/react` para rotas avançadas
+
+## 🧰 Vite
+
+- Alias `@` para raiz
+- variáveis de ambiente em `vite.config.ts`
+
+## 🧾 Licença
+
+MIT
