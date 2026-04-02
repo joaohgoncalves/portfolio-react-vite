@@ -5,41 +5,41 @@ import { useTranslation } from 'react-i18next';
 
 const STACK = [
   // Frontend / Web
-  "NEXT.JS",
-  "REACT",
-  "TYPESCRIPT",
-  "JAVASCRIPT",
-  "TAILWIND",
+  'NEXT.JS',
+  'REACT',
+  'TYPESCRIPT',
+  'JAVASCRIPT',
+  'TAILWIND',
 
   // Backend
-  "NODE.JS",
-  "PHP",
-  "PYTHON",
-  "JAVA",
-  "C#",
+  'NODE.JS',
+  'PHP',
+  'PYTHON',
+  'JAVA',
+  'C#',
 
   // Mobile
-  "REACT NATIVE",
-  "FLUTTER",
+  'REACT NATIVE',
+  'FLUTTER',
 
   // Databases
-  "MYSQL",
-  "MONGODB",
-  "FIREBASE",
+  'MYSQL',
+  'MONGODB',
+  'FIREBASE',
 
   // CMS / E-commerce
-  "WORDPRESS",
-  "ELEMENTOR",
-  "SHOPIFY",
+  'WORDPRESS',
+  'ELEMENTOR',
+  'SHOPIFY',
 
   // Desktop / UI
-  "FLUTTER",
-  "TKINTER",
-  "FLET",
+  'FLUTTER',
+  'TKINTER',
+  'FLET',
 
   // DevOps / Cloud
-  "DOCKER",
-  "VERCEL",
+  'DOCKER',
+  'VERCEL',
 ];
 
 const Partnerships: React.FC = () => {
@@ -47,75 +47,95 @@ const Partnerships: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="partners" className="py-24 md:py-32 bg-brand-dark border-t border-white/5 overflow-hidden flex flex-col justify-center">
-      
+    <section
+      id="partners"
+      className="py-24 md:py-32 bg-brand-dark border-t border-white/5 overflow-hidden flex flex-col justify-center"
+    >
       {/* Intro Text Block based on README philosophy */}
       <div className="container mx-auto px-6 md:px-12 lg:px-24 mb-16 md:mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
-            <div>
-                <Reveal>
-                    <h2 className="text-brand-accent font-mono text-xs md:text-sm mb-6 uppercase tracking-[0.2em]">
-                        {t('partnerships.title')}
-                    </h2>
-                </Reveal>
-                <Reveal delay={0.1}>
-                    <p className="text-3xl md:text-5xl font-display font-bold text-white leading-[1.1] tracking-tight" dangerouslySetInnerHTML={{ __html: t('partnerships.subtitle') }}>
-                    </p>
-                </Reveal>
-            </div>
-            <div className="md:pl-12">
-                <Reveal delay={0.2}>
-                    <p className="text-white/60 text-sm md:text-base leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: t('partnerships.description') }}>
-                    </p>
-                </Reveal>
-            </div>
+          <div>
+            <Reveal>
+              <h2 className="text-brand-accent font-mono text-xs md:text-sm mb-6 uppercase tracking-[0.2em]">
+                {t('partnerships.title')}
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p
+                className="text-3xl md:text-5xl font-display font-bold text-white leading-[1.1] tracking-tight"
+                dangerouslySetInnerHTML={{ __html: t('partnerships.subtitle') }}
+              ></p>
+            </Reveal>
+          </div>
+          <div className="md:pl-12">
+            <Reveal delay={0.2}>
+              <p
+                className="text-white/60 text-sm md:text-base leading-relaxed font-light"
+                dangerouslySetInnerHTML={{ __html: t('partnerships.description') }}
+              ></p>
+            </Reveal>
+          </div>
         </div>
       </div>
 
       {/* Infinite Marquee Animation with Pause on Click */}
-      <div 
+      <div
         className="relative w-full py-8 border-y border-white/5 bg-brand-gray/20 cursor-pointer"
         onClick={() => setIsPaused(!isPaused)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setIsPaused((prev) => !prev);
+          }
+        }}
+        role="button"
+        tabIndex={0}
         title={isPaused ? t('partnerships.play') : t('partnerships.pause')}
       >
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-brand-dark via-transparent to-brand-dark pointer-events-none" />
-        
+
         <div className="flex whitespace-nowrap overflow-hidden">
-            <div 
-                className="flex gap-16 md:gap-32 items-center pr-16 md:pr-32"
-                style={{
-                    animation: 'marquee 60s linear infinite',
-                    animationPlayState: isPaused ? 'paused' : 'running',
-                    width: 'max-content'
-                }}
-            >
-                {/* Triple the list to ensure seamless looping without gaps */}
-                {[...STACK, ...STACK, ...STACK].map((item, index) => (
-                    <div 
-                        key={`${item}-${index}`} 
-                        className={`group relative flex items-center justify-center transition-opacity duration-300 ${isPaused ? 'opacity-100' : 'opacity-80 hover:opacity-100'}`}
-                    >
-                        <span 
-                            className={`text-4xl md:text-7xl font-display font-bold text-transparent stroke-text transition-all duration-300 
+          <div
+            className="flex gap-16 md:gap-32 items-center pr-16 md:pr-32"
+            style={{
+              animation: 'marquee 60s linear infinite',
+              animationPlayState: isPaused ? 'paused' : 'running',
+              width: 'max-content',
+            }}
+          >
+            {/* Triple the list to ensure seamless looping without gaps */}
+            {[...STACK, ...STACK, ...STACK].map((item, index) => (
+              <div
+                key={`${item}-${index}`}
+                className={`group relative flex items-center justify-center transition-opacity duration-300 ${
+                  isPaused ? 'opacity-100' : 'opacity-80 hover:opacity-100'
+                }`}
+              >
+                <span
+                  className={`text-4xl md:text-7xl font-display font-bold text-transparent stroke-text transition-all duration-300 
                             ${isPaused ? 'text-white' : 'group-hover:text-white'}`}
-                        >
-                            {item}
-                        </span>
-                        {/* Dot separator */}
-                        <div className="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 w-1 h-1 md:w-2 md:h-2 bg-brand-accent rounded-full opacity-50" />
-                    </div>
-                ))}
-            </div>
+                >
+                  {item}
+                </span>
+                {/* Dot separator */}
+                <div className="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 w-1 h-1 md:w-2 md:h-2 bg-brand-accent rounded-full opacity-50" />
+              </div>
+            ))}
+          </div>
         </div>
-        
+
         {/* Pause Icon Overlay */}
-        <div className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-300 ${isPaused ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-            <div className="bg-brand-dark/80 backdrop-blur-sm p-5 rounded-full border border-white/10 shadow-2xl">
-                 <span className="text-2xl md:text-3xl text-brand-accent leading-none">⏸</span>
-            </div>
+        <div
+          className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-300 ${
+            isPaused ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          }`}
+        >
+          <div className="bg-brand-dark/80 backdrop-blur-sm p-5 rounded-full border border-white/10 shadow-2xl">
+            <span className="text-2xl md:text-3xl text-brand-accent leading-none">⏸</span>
+          </div>
         </div>
       </div>
-      
+
       {/* CSS for Outline Text effect and Keyframes */}
       <style>{`
         .stroke-text {

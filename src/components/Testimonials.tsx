@@ -142,7 +142,8 @@ const Testimonials: React.FC = () => {
               Depoimentos
             </h2>
             <p className="text-white/60 text-base md:text-lg leading-relaxed">
-              O que clientes, parceiros e colegas dizem sobre trabalhar comigo. Rating consistente de 5 estrelas na entrega de qualidade e profissionalismo.
+              O que clientes, parceiros e colegas dizem sobre trabalhar comigo. Rating consistente
+              de 5 estrelas na entrega de qualidade e profissionalismo.
             </p>
 
             {/* Overall Rating */}
@@ -175,17 +176,13 @@ const Testimonials: React.FC = () => {
                 {/* Stars */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className="fill-brand-accent text-brand-accent"
-                    />
+                    <Star key={i} size={16} className="fill-brand-accent text-brand-accent" />
                   ))}
                 </div>
 
                 {/* Content */}
                 <blockquote className="text-white/70 text-base leading-relaxed mb-6 md:mb-8 italic font-light">
-                  "{testimonial.content}"
+                  {`“${testimonial.content}”`}
                 </blockquote>
 
                 {/* Author */}
@@ -194,9 +191,7 @@ const Testimonials: React.FC = () => {
                     <div className="font-medium text-white text-sm md:text-base">
                       {testimonial.name}
                     </div>
-                    <div className="text-white/50 text-xs md:text-sm">
-                      {testimonial.role}
-                    </div>
+                    <div className="text-white/50 text-xs md:text-sm">{testimonial.role}</div>
                     {testimonial.company && (
                       <div className="text-brand-accent text-xs md:text-sm font-mono">
                         {testimonial.company}
@@ -213,11 +208,7 @@ const Testimonials: React.FC = () => {
                       className="text-white/30 hover:text-brand-accent transition-colors"
                       aria-label={`Visitar ${testimonial.company}`}
                     >
-                      <svg
-                        className="w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M11 3a1 1 0 100 2h3.293L9.646 9.646a1 1 0 001.414 1.414L15.707 6.707V10a1 1 0 102 0V4a1 1 0 00-1-1h-6z" />
                         <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                       </svg>
